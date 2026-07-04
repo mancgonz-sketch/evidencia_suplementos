@@ -672,7 +672,7 @@ function renderNews(){
   const filtered=getFilteredNews();
   const byDate={};
   filtered.forEach(n=>{if(!byDate[n.dateOrder])byDate[n.dateOrder]={date:n.date,items:[]};byDate[n.dateOrder].items.push(n);});
-  const sortedDates=Object.keys(byDate).sort((a,b)=>b-a);
+  const sortedDates=Object.keys(byDate).sort((a,b)=>Number(b)-Number(a));
 
   // Build tema options
   const allTemas=new Set();
