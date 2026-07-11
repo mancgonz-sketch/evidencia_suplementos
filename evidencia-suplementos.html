@@ -90,7 +90,8 @@ tr:hover td{background:rgba(255,255,255,0.03)}
         <button class="tab-btn" onclick="setTab('supp',this)" style="background:transparent;border:none;color:#fff;padding:8px 16px;font-size:13px;font-weight:600;cursor:pointer;border-bottom:2px solid #6366f1;transition:all 0.15s;white-space:nowrap">📋 Suplementos</button>
         <button class="tab-btn" onclick="setTab('peso',this)" style="background:transparent;border:none;color:#555;padding:8px 16px;font-size:13px;font-weight:400;cursor:pointer;border-bottom:2px solid transparent;transition:all 0.15s;white-space:nowrap">⚖️ Descenso de Peso</button>
         <button class="tab-btn" onclick="setTab('articular',this)" style="background:transparent;border:none;color:#555;padding:8px 16px;font-size:13px;font-weight:400;cursor:pointer;border-bottom:2px solid transparent;transition:all 0.15s;white-space:nowrap">🦴 Salud Articular</button>
-        <button class="tab-btn" onclick="setTab('news',this)" style="background:transparent;border:none;color:#555;padding:8px 16px;font-size:13px;font-weight:400;cursor:pointer;border-bottom:2px solid transparent;transition:all 0.15s;white-space:nowrap">🆕 Novedades <span id="news-badge" style="background:#6366f1;color:#fff;border-radius:10px;padding:1px 6px;font-size:10px;margin-left:4px">49</span></button>
+        <button class="tab-btn" onclick="setTab('competencia',this)" style="background:transparent;border:none;color:#555;padding:8px 16px;font-size:13px;font-weight:400;cursor:pointer;border-bottom:2px solid transparent;transition:all 0.15s;white-space:nowrap">⚡ En Competencia</button>
+        <button class="tab-btn" onclick="setTab('news',this)" style="background:transparent;border:none;color:#555;padding:8px 16px;font-size:13px;font-weight:400;cursor:pointer;border-bottom:2px solid transparent;transition:all 0.15s;white-space:nowrap">🆕 Novedades <span id="news-badge" style="background:#6366f1;color:#fff;border-radius:10px;padding:1px 6px;font-size:10px;margin-left:4px">50</span></button>
       </div>
     </div>
   </div>
@@ -114,6 +115,7 @@ tr:hover td{background:rgba(255,255,255,0.03)}
     </div>
     <div id="tab-peso" style="display:none"></div>
     <div id="tab-articular" style="display:none"></div>
+    <div id="tab-competencia" style="display:none"></div>
     <div id="tab-news" style="display:none"></div>
   </div>
 </div>
@@ -226,6 +228,8 @@ const NEWS=[
   {date:"10 Julio 2026",dateOrder:202610,tag:"NOTA CIENTÍFICA",tipo:"nota",categoria:"peso",tc:"#6366f1",tema:["general"],title:"GLP-1 natural: el nuevo paradigma de la suplementación metabólica 2026",supp:"Berberina · Canela · Jengibre · Té verde · Fenogreco",body:"GLP-1 (glucagón-like péptido 1) es la hormona que regula el apetito y la glucosa — la misma que imitan medicamentos como el Ozempic (semaglutide) y el Mounjaro (tirzepatide). En 2026, la investigación reencuadra muchos suplementos naturales no como 'quemadores de grasa' sino como moduladores de GLP-1 natural. Los ingredientes con mayor evidencia preliminar: berberina (activa AMPK — una enzima que mejora el uso de glucosa, mecanismo similar a la metformina), canela, jengibre, té verde, fenogreco y fibra soluble. Ninguno replica los efectos de los medicamentos — una persona tratada con semaglutide puede perder 14-17% de su peso corporal en un año (NEJM, Septiembre 2025), mientras que los suplementos naturales producen efectos de 1-3 kg en promedio. Son herramientas complementarias, no reemplazos.",source:"Medical News Today, Noviembre 2025 (fact-checked por PhD) · Peptide Dossier, revisión 2026 · NEJM, Septiembre 2025 — semaglutide oral 25mg, -14-17% peso"},
   {date:"10 Julio 2026",dateOrder:202610,tag:"NOTA CIENTÍFICA",tipo:"nota",categoria:"peso",tc:"#6366f1",tema:["general"],title:"Café torrado: por qué el café natural sin azúcar es mejor para la salud metabólica",supp:"Café torrado vs café de especialidad — Argentina",body:"El café torrado — el más consumido en Argentina (La Virginia, Cabrales, Bonafide) — agrega hasta un 10% de azúcar durante el tostado. Al caramelizarse el azúcar a altas temperaturas se forma acrilamida, una sustancia que la OMS clasifica como probable cancerígeno humano. El azúcar residual en la taza es mínimo (<0.1g), pero el proceso cubre defectos de granos de menor calidad. El café de especialidad (tostado natural sin azúcar) conserva mejor el ácido clorogénico (el compuesto con mayor evidencia metabólica del café) y no genera acrilamida. Para los beneficios metabólicos: elegir café tostado natural sin azúcar. En Argentina está disponible en cafeterías de especialidad y supermercados en líneas premium.",source:"EFSA, Opinión científica sobre acrilamida en alimentos, 2015 · OMS — acrilamida como probable cancerígeno · Código Alimentario Argentino — regulación del café torrado"},
   {date:"10 Julio 2026",dateOrder:202610,tag:"ALERTA",tipo:"alerta",categoria:"peso",tc:"#ef4444",tema:["general"],title:"Psyllium husk para bajar de peso: muy promovido, sin evidencia en peso ni BMI",supp:"Psyllium husk · Grupo C",body:"El psyllium husk (cáscara de psyllium) es promovido masivamente como suplemento para bajar de peso. Sin embargo, una revisión de 22 estudios científicos no encontró reducción significativa de peso ni de BMI (índice de masa corporal). Sí tiene evidencia real para colesterol LDL (colesterol malo) y tránsito intestinal — pero no para bajar de peso. Este es un ejemplo típico de suplemento con beneficios reales en algunas áreas (lípidos, digestión) pero sobrevendido para un objetivo (pérdida de peso) para el cual no tiene evidencia. Para saciedad y peso: avena, legumbres y chía tienen mejor evidencia.",source:"Revisión 22 estudios, Drugs.com (revisión médica, Febrero 2026) — psyllium y peso/BMI, sin reducción significativa"}
+,
+  {date:"10 Julio 2026",dateOrder:202610,tag:"INCORPORACIÓN",tipo:"incorporacion",categoria:"suplementos",tc:"#a855f7",tema:["cafeina","general"],title:"Nueva pestaña: En Competencia — guía práctica basada en evidencia para Antes, Durante y Después",supp:"Estrategias en competencia · Nueva sección",body:"Se incorpora la pestaña ⚡ En Competencia con estrategias de nutrición basadas en evidencia científica para los tres momentos del esfuerzo. ANTES: carbohidratos pre-carrera, cafeína (45-60 min antes), remolacha/nitratos (2-3 h antes) e hidratación. DURANTE: carbohidratos cada 20-30 min, sodio y electrolitos, cafeína mid-race, enjuague bucal con carbohidratos (efecto neurológico) y pickle juice para calambres. DESPUÉS: proteína + carbohidratos en ventana post-esfuerzo, cereza ácida para recuperación e inflamación, rehidratación con electrolitos. Incluye dato sobre lavarse los dientes y nitrato: evitar pasta antibacteriana las 2 horas previas si tomás remolacha.",source:"Meta-análisis 26 estudios MDPI Applied Sciences 2026 · COI Consensus Statement BJSM 2018 · Miller K.C. et al., MSSE 2010 · Network meta-análisis 48 estudios PMC Julio 2025"}
 ];
 
 const SUPPLEMENTS=[
@@ -511,6 +515,156 @@ const ARTICULAR_INVESTIGACION = [
   {nombre:"Exosomas derivados de células madre",descripcion:"Pequeñas vesículas (paquetes de información celular) liberadas por células madre, con capacidad de reducir la inflamación y estimular la reparación. 28 estudios preclínicos (rata) muestran resultados prometedores — aún lejos del uso clínico estándar."},
 ];
 
+
+// ============ EN COMPETENCIA ============
+const COMPETENCIA = {
+  antes: [
+    {
+      id:1,
+      titulo:"Carbohidratos — carga previa",
+      icono:"🍝",
+      cuando:"1-3 días antes en eventos largos · 3-4 horas antes el día de la carrera",
+      resumen:"La estrategia con mayor evidencia para maximizar las reservas de glucógeno (el combustible principal del músculo durante el ejercicio) antes de eventos de más de 90 minutos.",
+      detalle:"El glucógeno muscular es el principal combustible del ejercicio intenso. Cuanto más llenas estén las reservas al inicio, más tarde aparece la fatiga. Para eventos de más de 90 minutos, la carga de carbohidratos 1-3 días antes (aumentar el porcentaje de CHO en la dieta a 70-75% de las calorías totales) aumenta significativamente las reservas. El día de la carrera, una comida de 1-4 g de CHO/kg de peso corporal entre 1 y 4 horas antes del inicio completa las reservas sin generar malestar gastrointestinal. Para eventos cortos (menos de 60-90 minutos), la carga previa no es necesaria.",
+      ejemplos:"🍝 <b>Comida 3-4 horas antes:</b> pasta, arroz o papa con proteína magra (pollo, pescado) y poca grasa · 🍌 <b>1-2 horas antes:</b> banana, tostadas con mermelada, arroz con miel · ⚠️ Evitar: alimentos con mucha fibra, grasa o proteína justo antes de la carrera (enlentecen la digestión)",
+      refs:["Burke L.M. et al., COI Consensus Statement, BJSM, 2018 — carga de CHO y rendimiento","ScienceDirect, Febrero 2026 — CHO guidelines para atletas de resistencia, Tour de France 2025"]
+    },
+    {
+      id:2,
+      titulo:"Cafeína — timing pre-carrera",
+      icono:"☕",
+      cuando:"45-60 minutos antes del inicio",
+      resumen:"El ergogénico legal más efectivo y más estudiado. Mejora el rendimiento 2-4% en promedio — en una maratón equivale a 5-8 minutos menos.",
+      detalle:"La cafeína alcanza su pico en sangre entre 45-60 minutos después de ingerida. Para pre-carrera la dosis efectiva es 3-6 mg/kg de peso corporal. Más de 6 mg/kg aumenta el riesgo de nerviosismo, malestar gastrointestinal y taquicardia sin mejorar el rendimiento. Para atletas sensibles o que no consumen cafeína habitualmente, empezar con 1-2 mg/kg. Un network meta-análisis (48 estudios, 612 participantes, hasta Julio 2025) comparó diferentes formas de administración: tabletas/cápsulas tienen la absorción más predecible. El chicle de cafeína actúa más rápido (absorción por mucosa oral). NUNCA probar el día de la carrera algo que no hayas probado en entrenamiento.",
+      ejemplos:"☕ <b>Fuentes:</b> café espresso (~60-80 mg/taza), café filtrado (~100-150 mg/taza), geles con cafeína (30-100 mg/gel), tabletas de cafeína (200 mg/tableta — la opción más precisa) · 🧉 <b>Mate:</b> aprox 50-80 mg por cebada, menos predecible · ⚠️ El café torrado tiene menos ácido clorogénico y genera más acidez gástrica que el café natural",
+      refs:["Grgic J. et al., BJSM, 2020 — meta-análisis 300+ estudios","Network meta-análisis 48 estudios 612 participantes, PMC, Julio 2025 — métodos de administración","Kreutzer A. et al., Frontiers in Sports, 2022 — estrategias de cafeína en atletas de resistencia"]
+    },
+    {
+      id:3,
+      titulo:"Remolacha / Nitratos — óxido nítrico",
+      icono:"🥕",
+      cuando:"2-3 horas antes de la carrera · No durante",
+      resumen:"Mejora la eficiencia del oxígeno y reduce el costo energético del ejercicio submáximo. Mayor efecto en atletas recreativos que en élite.",
+      detalle:"Los nitratos de la remolacha se convierten en óxido nítrico (NO) — una molécula que dilata los vasos sanguíneos y mejora la eficiencia mitocondrial (las 'centrales energéticas' de la célula). El proceso de conversión de nitrato a óxido nítrico requiere bacterias específicas en la boca. Por eso: evitar enjuagues bucales antibacterianos y lavarse los dientes con pasta antibacteriana en las 2 horas previas a la carrera si tomaste remolacha — eliminarían las bacterias necesarias. Umbrella review (Nutrients, Junio 2025, Beijing Sport University): confirma mejoras en time trials y test Yo-Yo en atletas recreativos y moderadamente entrenados. En élite los resultados son mixtos.",
+      ejemplos:"🥕 <b>Forma práctica:</b> 500 mL de jugo de remolacha natural o concentrado (Beet-It, Biotta) 2-3 horas antes · 🥗 <b>Alternativa:</b> ensalada de remolacha asada la noche anterior + jugo el día de la carrera · ⚠️ El nitrato aislado en cápsulas es MENOS efectivo que el jugo entero (umbrella review 2025) · ⚠️ Evitar pasta de dientes antibacteriana en las 2 hs previas",
+      refs:["Umbrella Review, Nutrients, Junio 2025, Beijing Sport University","Jones A.M., Applied Physiology, Nutrition and Metabolism, 2014","Zoughaib W.S. et al., Frontiers in Nutrition, 2024 — más que solo nitrato"]
+    },
+    {
+      id:4,
+      titulo:"Hidratación pre-carrera",
+      icono:"💧",
+      cuando:"Las 2-4 horas previas",
+      resumen:"La mayoría de los atletas arranca deshidratada. Incluso una deshidratación leve del 2% del peso corporal deteriora el rendimiento.",
+      detalle:"Un estudio en ciclismo de grava mostró que solo el 22.6% de los participantes llegó hidratado al inicio de la carrera. La estrategia más efectiva: beber 5-10 mL/kg de peso corporal de agua o bebida con electrolitos en las 2-4 horas previas a la carrera. La orina debería ser de color amarillo pálido antes del inicio. Agregar sodio a la bebida pre-carrera aumenta la retención de líquido y estimula la sed para seguir bebiendo.",
+      ejemplos:"💧 <b>Protocolo simple:</b> 2-4 horas antes: 500-750 mL de agua con electrolitos o bebida deportiva · 30 min antes: 150-250 mL de agua · ⚠️ No tomar demasiada agua sin sodio justo antes (riesgo de hiponatremia — bajada de sodio en sangre, especialmente en eventos largos) · La orina amarillo pálido = bien hidratado",
+      refs:["Schubert M.M. et al., PMC, Diciembre 2024 — hidratación en ciclismo de grava, 121 participantes","Maughan R.J. et al., COI Consensus Statement, BJSM, 2018"]
+    },
+  ],
+  durante: [
+    {
+      id:1,
+      titulo:"Carbohidratos durante el esfuerzo",
+      icono:"⚡",
+      cuando:"Cada 20-30 minutos en eventos de más de 60-90 minutos",
+      resumen:"La estrategia individual con mayor impacto en el rendimiento durante eventos de resistencia. Sin carbohidratos, el rendimiento cae inevitablemente.",
+      detalle:"Durante el ejercicio de más de 60-90 minutos, las reservas de glucógeno se van agotando y el rendimiento cae. La ingesta de carbohidratos durante el esfuerzo retrasa ese agotamiento. Recomendaciones actuales: 30-60 g/h en eventos de 1-2.5 horas, hasta 90 g/h en eventos más largos usando una combinación de glucosa + fructosa (ratio 2:1) que permite mayor absorción intestinal. Algunos atletas de élite del Tour de France 2025 llegaron a 116 g/h entrenando el sistema digestivo progresivamente. Meta-análisis de 26 estudios: CHO + electrolitos aumentan el tiempo hasta el agotamiento (SMD — tamaño del efecto estadístico — de 0.60, p=0.006).",
+      ejemplos:"⚡ <b>Fuentes prácticas:</b> geles deportivos (20-25 g CHO/gel) · bebidas deportivas isotónicas (30-60 g CHO/L) · dátiles (18g CHO c/u, muy digestivos) · banana (27g CHO) · gomitas de arroz · ⚠️ Entrenar el intestino: practicar la ingesta durante entrenamientos largos para evitar problemas gastrointestinales en carrera",
+      refs:["Meta-análisis 26 estudios, MDPI Applied Sciences, Marzo 2026 (PROSPERO CRD42024618630)","ScienceDirect, Febrero 2026 — CHO guidelines actualizadas, Tour de France 2025","Revisión CHO en ultra-trail, PMC — problemas GI en 30-90% de atletas"]
+    },
+    {
+      id:2,
+      titulo:"Sodio y electrolitos durante el esfuerzo",
+      icono:"🧂",
+      cuando:"Cada botella de agua consumida en eventos de más de 1 hora",
+      resumen:"El sodio es el electrolito más importante durante el esfuerzo. Sin él, tomar solo agua puede ser contraproducente e incluso peligroso.",
+      detalle:"El sodio es el principal electrolito perdido en el sudor. Durante el ejercicio prolongado, beber solo agua sin sodio diluye los electrolitos en sangre — un problema llamado hiponatremia (sodio bajo en sangre) que puede causar náuseas, confusión y en casos severos convulsiones. El sodio también estimula la sed y facilita la absorción intestinal de agua y glucosa. Recomendación: 200-500 mg de sodio por cada 500-700 mL de líquido consumido. Un desbalance de electrolitos produce síntomas similares a la deshidratación: calambres, fatiga muscular, náuseas.",
+      ejemplos:"🧂 <b>Fuentes de sodio durante la carrera:</b> bebidas deportivas isotónicas (400-700 mg sodio/L) · tabletas de electrolitos · geles con sodio · una pizca de sal (300 mg/cucharadita) en agua · snacks salados (pretzels, galletas de agua) en ultra-distancias · ⚠️ Referencia: el sudor contiene aprox 500-1500 mg de sodio por litro — reemplazar al menos parte es clave",
+      refs:["Maughan R.J. et al., COI Consensus Statement, BJSM, 2018","Borra V. et al., Journal of Athletic Training, Enero 2025 — soluciones CHO-electrolito para rehidratación"]
+    },
+    {
+      id:3,
+      titulo:"Cafeína durante la carrera — estrategia mid-race",
+      icono:"☕",
+      cuando:"A mitad del evento (eventos >3h) y en los últimos 60-90 minutos",
+      resumen:"La cafeína mid-race es uno de los recursos más subutilizados por atletas amateur. Un boost en el final cuando la fatiga es máxima genera el mayor beneficio.",
+      detalle:"La cafeína tiene una vida media de aproximadamente 5 horas. En eventos de más de 3 horas, los niveles de cafeína del pre-race comienzan a bajar. Una segunda dosis de 1-2 mg/kg en el punto medio mantiene los niveles elevados. Una dosis de 100-150 mg en los últimos 60-90 minutos de cualquier evento — cuando la fatiga percibida es máxima — genera un impulso medible justo cuando más se necesita. El chicle de cafeína actúa más rápido que las tabletas porque se absorbe por la mucosa oral.",
+      ejemplos:"☕ <b>Opciones mid-race:</b> gel con cafeína (50-100 mg) · chicle de cafeína (actúa en 10-15 min) · cola flat (aprox 35 mg/lata + carbohidratos — clásico de ultra) · tableta de 100-200 mg guardada en el bolsillo · ⚠️ No combinar con bebidas energizantes (dosis total puede ser excesiva)",
+      refs:["Roadman Cycling, Julio 2026 — estrategia práctica de cafeína en ciclismo de ruta","Network meta-análisis 48 estudios, PMC, Julio 2025 — métodos de administración y dosis"]
+    },
+    {
+      id:4,
+      titulo:"Enjuague bucal con carbohidratos",
+      icono:"🫧",
+      cuando:"Cada 5-10 minutos en esfuerzos de 45-75 minutos",
+      resumen:"Simplemente enjuagarse la boca con una bebida azucarada (sin tragar) mejora el rendimiento en esfuerzos cortos-medios. El efecto es neurológico, no calórico.",
+      detalle:"El enjuague bucal con carbohidratos activa receptores en la boca que envían señales al cerebro indicando que hay energía disponible, reduciendo la percepción de esfuerzo y activando áreas motoras del cerebro. El efecto es puramente neurológico — no hace falta tragar los carbohidratos para que funcione. Especialmente útil cuando el estómago no tolera bien la ingesta durante el esfuerzo o en eventos cortos donde tomar geles o bebidas puede ser incómodo.",
+      ejemplos:"🫧 <b>Cómo hacerlo:</b> enjuagarse 5-10 segundos con bebida deportiva, jugo de fruta diluido o agua con azúcar disuelto · Luego escupir o tragar · Repetir cada 5-10 minutos · ⚠️ El efecto es mayor en esfuerzos de 45-75 minutos que en eventos muy largos donde la ingesta real es necesaria",
+      refs:["Burke L.M. et al., COI Consensus Statement, BJSM, 2018 — enjuague bucal con CHO","Revisión de mecanismos neurológicos del enjuague bucal, Sports Medicine, 2024"]
+    },
+    {
+      id:5,
+      titulo:"Jugo de pepinillos — calambres agudos",
+      icono:"🥒",
+      cuando:"Ante calambres agudos durante la carrera",
+      resumen:"Reduce la duración de los calambres musculares en ~45% más rápido que el agua sola. El mecanismo es neurológico, no por electrolitos.",
+      detalle:"Miller et al. demostraron que el jugo de pepinillos reduce la duración de calambres inducidos eléctricamente en ~45%, con un efecto demasiado rápido para ser explicado por un mecanismo osmótico o de electrolitos. La hipótesis más aceptada es un reflejo neurológico oromotor — algo en el sabor ácido/salado del jugo activa señales nerviosas que inhiben la actividad neuronal anormal que causa el calambre. En eventos de resistencia, es una herramienta de rescate rápida y práctica.",
+      ejemplos:"🥒 <b>Cómo usarlo:</b> 60-80 mL del líquido de un frasco de pepinillos en vinagre · No es necesario diluir · No es preventivo — actúa sobre calambres ya instalados · En Argentina: disponible en cualquier supermercado (Gliemann, La Campagnola) · ⚠️ No confundir con agua de pepino fresco — es el líquido de conserva en vinagre",
+      refs:["Miller K.C. et al., Medicine & Science in Sports & Exercise, 2010","Miller K.C. et al., Journal of Athletic Training, 2010"]
+    },
+    {
+      id:6,
+      titulo:"Hidratación durante el esfuerzo — beber según sed vs protocolo",
+      icono:"💧",
+      cuando:"Durante todo el evento",
+      resumen:"La ciencia 2025 respalda beber según la sed en ultra-distancias para evitar hiponatremia. En eventos cortos-medios, un protocolo programado puede ser más efectivo.",
+      detalle:"Una revisión narrativa (Nutrients, Noviembre 2025, estudios hasta Junio 2025) examinó ambas estrategias. Beber según la sed es más seguro en ultra-distancias — evita la hiponatremia (bajada de sodio por tomar demasiada agua). En eventos de 1-3 horas bajo calor o alta intensidad, un protocolo programado (beber cada 15-20 minutos independientemente de la sed) puede mantener mejor el rendimiento. La regla práctica: en eventos cortos, no esperes tener sed (puede llegar tarde); en ultra, respetá la sed y no forzarte a tomar más.",
+      refs:["Revisión narrativa hidratación ultra, Nutrients, Noviembre 2025 (doi: 10.3390/nu17223526)","Schubert M.M. et al., PMC, Diciembre 2024"]
+    },
+  ],
+  despues: [
+    {
+      id:1,
+      titulo:"Proteína post-esfuerzo — ventana anabólica",
+      icono:"🍗",
+      cuando:"Dentro de los 30-60 minutos post-carrera",
+      resumen:"La combinación de proteína + carbohidratos en los primeros 30-60 minutos post-esfuerzo maximiza la recuperación muscular y la recarga de glucógeno.",
+      detalle:"Después de un esfuerzo intenso, el músculo está en estado catabólico (se está degradando) y es muy sensible a los aminoácidos. La ingesta de 20-40 g de proteína de alta calidad en los primeros 30-60 minutos activa la síntesis proteica muscular (MPS — el proceso de reparación y construcción del músculo) de forma más efectiva que esperar horas. Combinada con carbohidratos, también acelera la recarga de las reservas de glucógeno agotadas durante el esfuerzo.",
+      ejemplos:"🍗 <b>Opciones post-carrera:</b> batido de proteína whey + banana (rápido y digestivo) · yogur griego con frutas y granola · leche chocolatada (clásico de recuperación, ratio CHO:proteína ideal) · pollo con arroz si la carrera terminó hace más de 1 hora · ⚠️ La 'ventana anabólica' es más amplia de lo que se creía — hasta 2 horas está bien, pero más temprano es mejor",
+      refs:["Morton R.W. et al., British Journal of Sports Medicine, 2018 — meta-análisis proteína y MPS","Ivy J.L. & Portman R., Nutrient Timing, 2004"]
+    },
+    {
+      id:2,
+      titulo:"Carbohidratos post-esfuerzo — recarga de glucógeno",
+      icono:"🍌",
+      cuando:"Primeras 2 horas post-carrera",
+      resumen:"La recarga de glucógeno es más rápida en las primeras 2 horas post-esfuerzo. Crítico si competís o entrenás al día siguiente.",
+      detalle:"Las primeras 2 horas post-esfuerzo son el período de mayor velocidad de recarga del glucógeno muscular. Si la próxima competencia o entrenamiento es dentro de las 8-24 horas siguientes, maximizar esta recarga es fundamental. Recomendación: 1-1.2 g de CHO/kg de peso corporal por hora durante las primeras 4 horas post-esfuerzo.",
+      ejemplos:"🍌 <b>Opciones de recarga:</b> arroz, pasta, papa o batata · frutas con alto índice glucémico (banana, sandía, uva) · bebidas deportivas · pan blanco con mermelada o miel · ⚠️ Si el próximo evento es al día siguiente: priorizar CHO de alto índice glucémico en las primeras 2 horas · Si hay más de 24 horas: podés comer normalmente",
+      refs:["Burke L.M. et al., COI Consensus Statement, BJSM, 2018","Ivy J.L. — glucógeno muscular y timing de CHO post-ejercicio"]
+    },
+    {
+      id:3,
+      titulo:"Cereza ácida — recuperación e inflamación",
+      icono:"🍒",
+      cuando:"Días previos + día post-carrera",
+      resumen:"Reduce la inflamación y el dolor muscular tardío (DOMS). Mejora la recuperación de fuerza a las 24-96 horas post-esfuerzo.",
+      detalle:"Meta-análisis de 19 ECA (2021): mejora significativa de recuperación de fuerza muscular a las 24, 48, 72 y 96 horas post-ejercicio. Meta-análisis de 10 ECA (2025): reduce inflamación y mejora fuerza muscular en ~9% tras ejercicio. El protocolo más estudiado: consumir 30 mL de jugo concentrado de cereza Montmorency 2 veces al día, comenzando 4-5 días antes de la competencia y continuando los días posteriores.",
+      ejemplos:"🍒 <b>Protocolo práctico:</b> 30 mL de jugo concentrado de cereza Montmorency 2x/día · Empezar 4-5 días antes de la carrera · Continuar 2-3 días después · ⚠️ La cereza común del supermercado tiene menos antocianinas que la Montmorency — buscar la variedad específica en dietéticas o importada",
+      refs:["Meta-análisis 19 ECA, 2021 — recuperación de fuerza 24-96h post-ejercicio","Meta-análisis 10 ECA, 2025 — reducción inflamación y fuerza +9%","Barforoush F. et al., Food Science & Nutrition, Enero 2025 — sueño y recuperación"]
+    },
+    {
+      id:4,
+      titulo:"Rehidratación post-esfuerzo",
+      icono:"💧",
+      cuando:"Primeras 2 horas post-carrera",
+      resumen:"La rehidratación es más efectiva con sodio que con agua sola. El objetivo es recuperar 125-150% del peso perdido durante el esfuerzo.",
+      detalle:"Después de un esfuerzo intenso, la rehidratación con agua sola es menos efectiva porque el agua sin sodio no estimula la sed y se elimina más rápidamente por orina. La estrategia más efectiva: bebida con electrolitos (especialmente sodio) para rehidratarse. Una revisión sistemática (Journal of Athletic Training, Enero 2025) evaluó soluciones de carbohidratos y electrolitos para la rehidratación post-ejercicio. El objetivo práctico: pesar antes y después de la carrera — recuperar 125-150% de lo perdido en las primeras 2-4 horas.",
+      ejemplos:"💧 <b>Protocolo de rehidratación:</b> bebida deportiva con electrolitos en los primeros 30 min · Agua con una pizca de sal y jugo de limón · Leche (también es una opción de recuperación con electrolitos y proteína) · ⚠️ Si perdiste 1 kg durante la carrera, tomar entre 1.25 y 1.5 litros de líquido con electrolitos en las primeras 2-4 horas",
+      refs:["Borra V. et al., Journal of Athletic Training, Enero 2025 (doi: 10.4085/1062-6050-0682.22)","Maughan R.J. et al., COI Consensus Statement, BJSM, 2018"]
+    },
+  ]
+};
+
 // NEWS FILTER STATE
 let newsFilterTipo="all", newsFilterTema="all", newsFilterCategoria="all";
 const TEMAS_MAP={
@@ -592,15 +746,20 @@ function setTab(tab,btn){
   document.getElementById("tab-supp").style.display=tab==="supp"?"block":"none";
   document.getElementById("tab-peso").style.display=tab==="peso"?"block":"none";
   document.getElementById("tab-articular").style.display=tab==="articular"?"block":"none";
+  document.getElementById("tab-competencia").style.display=tab==="competencia"?"block":"none";
   document.getElementById("tab-news").style.display=tab==="news"?"block":"none";
   document.querySelectorAll(".tab-btn").forEach(b=>{b.style.color="#555";b.style.fontWeight="400";b.style.borderBottom="2px solid transparent";});
   btn.style.color="#fff";btn.style.fontWeight="600";btn.style.borderBottom="2px solid #6366f1";
   if(tab==="peso"&&!pesoRendered){renderPeso();pesoRendered=true;}
   if(tab==="articular"&&!articularRendered){renderArticular();articularRendered=true;}
+  if(tab==="competencia"&&!competenciaRendered){renderCompetencia();competenciaRendered=true;}
 }
 
 let pesoRendered=false;
 let articularRendered=false;
+let competenciaRendered=false;
+let competenciaSubTab="antes";
+let currentCompItem=null;
 let currentTratamiento=null;
 let currentOralSupp=null;
 let pesoSubTab="claves";
@@ -1073,7 +1232,76 @@ function renderOralSuppPanel(){
     </div>`;
 }
 
-function closePanel(){document.getElementById("overlay").style.display="none";currentSupp=null;currentWLSupp=null;currentFactor=null;currentTratamiento=null;currentOralSupp=null;}
+
+function setCompSubTab(sub,btn){
+  competenciaSubTab=sub;
+  document.querySelectorAll(".comp-subtab-btn").forEach(b=>b.classList.remove("va"));
+  btn.classList.add("va");
+  renderCompetenciaContent();
+}
+
+function renderCompetencia(){
+  document.getElementById("tab-competencia").innerHTML=`
+    <div style="background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.15);border-radius:10px;padding:12px 16px;margin-bottom:1rem;font-size:12px;color:#9fa8f5;line-height:1.5">
+      ⚡ Estrategias basadas en evidencia científica para antes, durante y después del esfuerzo. Siempre probar en entrenamiento antes de aplicar en competencia.
+    </div>
+    <div style="display:flex;background:rgba(255,255,255,0.05);border-radius:8px;padding:3px;gap:2px;border:1px solid rgba(255,255,255,0.07);margin-bottom:1rem;overflow-x:auto">
+      <button class="vbtn comp-subtab-btn va" onclick="setCompSubTab('antes',this)" style="white-space:nowrap">⏱️ Antes</button>
+      <button class="vbtn comp-subtab-btn" onclick="setCompSubTab('durante',this)" style="white-space:nowrap">🏃 Durante</button>
+      <button class="vbtn comp-subtab-btn" onclick="setCompSubTab('despues',this)" style="white-space:nowrap">🔄 Después</button>
+    </div>
+    <div id="competencia-content"></div>`;
+  renderCompetenciaContent();
+}
+
+function renderCompetenciaContent(){
+  const el=document.getElementById("competencia-content");
+  const items=COMPETENCIA[competenciaSubTab];
+  el.innerHTML=items.map(item=>`<div class="row" onclick="openCompItem('${competenciaSubTab}',${item.id})" style="border-left:3px solid #6366f1;background:rgba(255,255,255,0.03);margin-bottom:8px">
+    <div style="font-size:1.8rem;flex-shrink:0">${item.icono}</div>
+    <div style="flex:1">
+      <div style="font-size:15px;font-weight:600;color:#e2e2ea">${item.titulo}</div>
+      <div style="font-size:11px;color:#6366f1;margin-top:2px;font-weight:600">⏰ ${item.cuando}</div>
+      <div style="font-size:12px;color:#888;margin-top:3px;line-height:1.4">${item.resumen}</div>
+    </div>
+    <span style="color:#6366f1;font-size:16px;flex-shrink:0">›</span>
+  </div>`).join("");
+}
+
+function openCompItem(tab,id){
+  currentCompItem=COMPETENCIA[tab].find(i=>i.id===id);
+  renderCompPanel();
+  document.getElementById("overlay").style.display="flex";
+}
+
+function renderCompPanel(){
+  const item=currentCompItem;
+  document.getElementById("panel").innerHTML=`
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
+      <div>
+        <span style="font-size:2rem;display:block;margin-bottom:6px">${item.icono}</span>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.04em;line-height:1.1">${item.titulo}</div>
+      </div>
+      <button onclick="closePanel()" style="background:rgba(255,255,255,0.07);border:none;color:#888;border-radius:50%;width:32px;height:32px;font-size:1rem;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center">✕</button>
+    </div>
+    <div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.25);border-radius:8px;padding:8px 14px;margin-bottom:12px">
+      <span style="font-size:11px;color:#6366f1;font-weight:700">⏰ CUÁNDO: </span><span style="font-size:13px;color:#c5c8f5">${item.cuando}</span>
+    </div>
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:12px 16px;margin-bottom:14px">
+      <div style="font-size:14px;line-height:1.5;color:#e2e2ea;font-style:italic">${item.resumen}</div>
+    </div>
+    <div style="margin-bottom:14px">
+      <div style="font-size:11px;color:#555;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:6px;font-weight:600">📖 Detalle y evidencia</div>
+      <div style="font-size:14px;line-height:1.7;color:#aaa">${item.detalle}</div>
+    </div>
+    ${item.ejemplos?`<div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.15);border-radius:8px;padding:10px 14px;margin-bottom:14px;font-size:13px;line-height:1.6;color:#9bcf9b">${item.ejemplos}</div>`:""}
+    <div style="border-top:1px solid rgba(255,255,255,0.07);padding-top:12px">
+      <div style="font-size:11px;color:#555;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:8px;font-weight:600">📚 Fuentes científicas</div>
+      <div style="display:flex;flex-direction:column;gap:5px">${item.refs.map(r=>`<div style="font-size:11px;color:#555;background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.15);border-radius:6px;padding:5px 10px;font-style:italic">${r}</div>`).join("")}</div>
+    </div>`;
+}
+
+function closePanel(){document.getElementById("overlay").style.display="none";currentSupp=null;currentWLSupp=null;currentFactor=null;currentTratamiento=null;currentOralSupp=null;currentCompItem=null;}
 </script>
 </body>
 </html>
